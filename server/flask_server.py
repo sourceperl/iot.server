@@ -73,7 +73,11 @@ def set(name):
 @app.route('/')
 @app.route('/freeboard/')
 def freeboard_redir():
-    return redirect("/freeboard/index.html#source=dashboard.json", code=302)
+    return redirect("/board/default", code=302)
+
+@app.route('/board/<board_name>')
+def board_redir(board_name):
+    return redirect("/freeboard/index.html#source=boards/" + board_name + ".json", code=302)
 
 @app.route('/freeboard/<path:path>')
 @nocache

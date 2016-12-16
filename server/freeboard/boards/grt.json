@@ -1,0 +1,137 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "METEO",
+			"width": 1,
+			"row": {
+				"3": 1,
+				"5": 1
+			},
+			"col": {
+				"3": 3,
+				"5": 4
+			},
+			"col_width": "2",
+			"widgets": [
+				{
+					"type": "html",
+					"settings": {
+						"html": "<iframe src=\"http://www.vigimeteo.com/widget_vigi_dep_s.html?a=593600&b=\" width=\"100%\" height=\"300px\" frameborder=\"0\">\n</iframe>",
+						"height": 4
+					}
+				}
+			]
+		},
+		{
+			"title": "Accès documentation réglementaire",
+			"width": 1,
+			"row": {
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"4": 1,
+				"5": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "html",
+					"settings": {
+						"html": "<style type=\"text/css\">\n    table {\n        #border: medium solid #6495ed;\n        border-collapse: collapse;\n        width: 100%;\n    }\n    th {\n        font-family: monospace;\n        #border: thin solid #6495ed;\n        width: 50%;\n        padding: 5px;\n        #background-color: #D0E3FA;\n    }\n    td {\n        font-family: sans-serif;\n        #border: thin solid #6495ed;\n        width: 50%;\n        padding: 5px;\n        text-align: center;\n        #background-color: #ffffff;\n    }\n    caption {\n        font-family: sans-serif;\n    }\n</style>\n<table>\n    <tr><td><b><a href=\"/pub/pdf-sample.pdf\" target=\"docframe\">fichier PDF</a></b></td></tr>\n    <tr><td><b><a href=\"https://www.free.fr\" target=\"docframe\">site web free.fr</a></b></td></tr>\n</table>",
+						"height": 2
+					}
+				}
+			]
+		},
+		{
+			"title": "DTS",
+			"width": 1,
+			"row": {
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"4": 1,
+				"5": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "html",
+					"settings": {
+						"html": "<center><img width=\"100%\" height=\"100%\" src=\"/pub/dts_logo.jpg\"></center>",
+						"height": 4
+					}
+				}
+			]
+		},
+		{
+			"title": "STAT SECURITE",
+			"width": 1,
+			"row": {
+				"3": 11,
+				"4": 11,
+				"5": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 1,
+				"5": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "DTS - Nombre de jours sans accident",
+						"size": "regular",
+						"value": "//datasources[\"Local\"][\"data\"][\"field1\"][\"value\"]\nvar now_day = new Date();\n// 1 dec 2016\nvar acc_day = new Date(2016, 11, 1);\n\n \n// Calculer la différence\nvar diff = Math.abs(now_day.getTime() - acc_day.getTime());\nreturn Math.floor(diff / (1000 * 60 * 60 * 24));",
+						"animate": true,
+						"units": "jours"
+					}
+				}
+			]
+		},
+		{
+			"title": "Documentation réglementaire",
+			"width": 1,
+			"row": {
+				"3": 17,
+				"4": 17,
+				"5": 11
+			},
+			"col": {
+				"3": 1,
+				"4": 1,
+				"5": 1
+			},
+			"col_width": "6",
+			"widgets": [
+				{
+					"type": "html",
+					"settings": {
+						"html": "<iframe name=\"docframe\" src=\"\" width=\"100%\" height=\"1000px\"></iframe>\n",
+						"height": 10
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Local",
+			"type": "JSON",
+			"settings": {
+				"url": "/data/get",
+				"use_thingproxy": true,
+				"refresh": 5,
+				"method": "GET"
+			}
+		}
+	],
+	"columns": 6
+}
