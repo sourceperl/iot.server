@@ -19,8 +19,8 @@
 				{
 					"type": "html",
 					"settings": {
-						"html": "<iframe src=\"http://www.vigimeteo.com/widget_vigi_dep_s.html?a=593600&b=\" width=\"100%\" height=\"300px\" frameborder=\"0\">\n</iframe>",
-						"height": 4
+						"html": "<center>\n<iframe allowtransparency=\"true\" style=\"background: #ffffff;\" src=\"http://www.vigimeteo.com/widget_vigi_dep_s.html?a=593600&b=\" width=\"425\" height=\"265\" frameborder=\"0\"></iframe>\n</center>",
+						"height": 4.1
 					}
 				}
 			]
