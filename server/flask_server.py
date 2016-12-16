@@ -80,6 +80,11 @@ def freeboard_redir():
 def freeboard_dir(path):
     return send_from_directory('freeboard', path)
 
+@app.route('/pub/<path:path>')
+@nocache
+def pub_dir(path):
+    return send_from_directory('pub', path)
+
 if __name__ == '__main__':
     threading.Thread(target=update_thread).start()
     app.run(threaded=True, debug=True, host='0.0.0.0')
