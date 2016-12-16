@@ -1,0 +1,52 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "VIEW DATA STORE ITEMS",
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "field1",
+						"size": "regular",
+						"value": "datasources[\"Local\"][\"data\"][\"field1\"][\"value\"]",
+						"animate": true,
+						"units": ""
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "field2",
+						"size": "regular",
+						"value": "datasources[\"Local\"][\"data\"][\"field2\"][\"value\"]",
+						"animate": true
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Local",
+			"type": "JSON",
+			"settings": {
+				"url": "/data/get",
+				"use_thingproxy": true,
+				"refresh": 5,
+				"method": "GET"
+			}
+		}
+	],
+	"columns": 3
+}
